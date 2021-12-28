@@ -1,0 +1,2 @@
+const superServiceId= "6130b4ed5de49f7e97616913"
+const superServiceKey= "qJIePtcJcoPkpccEE7mt+WTxOPuHrWN8FdgJsQybo6QgT2cSbFzv+ggOfj71/V0k/vXJtufjOUDwLipyfhaS1w3JCerXKDCnmOtub4+D5VSdwAeACnH6L/1cty1Kq02Wibt5l5q+G/9QiPNOM0gB1cp03GapH9TBoZutQu+GvJ4="
