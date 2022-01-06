@@ -4,7 +4,7 @@ describe('irtc test', function () {
         server: superServiceId,
         key: superServiceKey
     }
-    beforeAll(async function () {
+    beforeEach(async function () {
         console.log("开始第"+count+"条测试用例")
         const bodyCreate = {
             name: "noah"
@@ -51,20 +51,19 @@ describe('irtc test', function () {
                 })
             })
         }, err => {
-            console.log('get room list fail')
+            console.log('get room list fail',err.toString())
         })
         console.log("当前为第"+count+"测试用例结果",token,localStream,publicationTemp,subscriptionTemp)
         console.log("第"+count+"条测试用例结束")
         count ++
     })
     it('基础功能测试', async function (done) {
-        console.log("token",atob(token))
         await client.join(token).then(res => {
             console.log('join room success')
             expect(true).toBe(true)
         }, err => {
             console.log('join room fail', err.toString())
-            expect(true).toBe(true)
+            expect(true).toBe(false)
             done()
         })
         pubParams = {
@@ -81,15 +80,6 @@ describe('irtc test', function () {
                 console.log('publish local stream err', err)
                 expect(true).toBe(false)
             });
-
-        await client.subscribe(remoteStream).then(res => {
-            subscriptionTemp = res
-            console.log('subscribe success', res)
-            expect(true).toBe(true)
-        }, err => {
-            console.log('subscribe fail', err.toString(), "remoteStreamId:", remoteStream)
-            expect(false).toBe(true)
-        })
         done()
     });
     it('get start ',async function (done) {
@@ -99,7 +89,7 @@ describe('irtc test', function () {
             expect(true).toBe(true)
         }, err => {
             console.log('join room fail', err.toString())
-            expect(true).toBe(true)
+            expect(true).toBe(false)
             done()
         })
         pubParams = {
