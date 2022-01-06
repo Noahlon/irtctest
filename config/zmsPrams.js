@@ -1,4 +1,4 @@
-let token,remoteStream
+let remoteStream
 let  audioSource = 'mic', videoSource = 'camera', localStream, localMediaStream, pubParams, videoCodec = 'vp8', audioCodec = 'pcma', audioMax = 200, videoMax = 200
 let publicationTemp, subscriptionTemp, pubTempId, pubTrackType, subTrackType, key, serverId, partId
 let muteOption={
